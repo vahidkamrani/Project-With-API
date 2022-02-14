@@ -41,7 +41,6 @@ class Complaint(models.Model):
         ('عدم جمع اوری','عدم جمع اوری'),
         ('سایر','سایر')
     )
-
     Name = models.CharField(max_length=30)
     ID_name = models.CharField(max_length=20)
     Receivingـunit=models.CharField(max_length=30,choices=RECEIVING_CHOICES)
@@ -51,8 +50,8 @@ class Complaint(models.Model):
     Phone_number = models.CharField(max_length=10)
     Mobile_number = models.CharField(max_length=15)
     Address = models.CharField(max_length=100,blank=True,null=True)
-    ID_customer = models.CharField(max_length=10,blank=True,null=True)
-    Reason_complaint=MultiSelectField(choices=REASON_CHOICES,max_choices=4,blank=True,null=True)
+    ID_customer = models.CharField(max_length=10)
+    Reason_complaint=MultiSelectField(choices=REASON_CHOICES,max_choices=4)
     Complaint_description=models.TextField(max_length=200,blank=True,null=True)
     suggestion=models.TextField(max_length=200,blank=True,null=True)
     created_at=models.DateTimeField(blank=True,null=True)

@@ -4,6 +4,7 @@ from .models import Complaint
 
 
 class ComplaintSerializer(serializers.ModelSerializer):
+    Reason_complaint = serializers.ListField(max_length=4)
     class Meta:
         model = Complaint
         fields = '__all__'
